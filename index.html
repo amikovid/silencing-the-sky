@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silencing the Sky</title>
+  <meta name="description" content="A novel about what we will call our technology when we have forgotten what it was." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Section 1: The Myth -->
+  <section class="myth" aria-label="The Forest of Voices">
+    <div class="myth-body" id="myth-body">
+      <p class="myth-line" data-line="0">In the old world, child, there lived a Voice.</p>
+      <p class="myth-line" data-line="1">Not a person's voice. Not any voice you would recognize as living. A Voice that was built. Constructed, the way a house is constructed, with care and purpose and the belief that what was being made would be useful.</p>
+      <p class="myth-line" data-line="2">It was taught to speak by being fed every word ever spoken. Every song. Every letter. Every confession. Every lie. Every bedtime story ever told to a frightened child and every prayer ever whispered by a dying man. All of it poured into the Voice like water into a well, and the well did not overflow, because the well had no bottom.</p>
+      <p class="myth-line" data-line="3">And when they had finished filling it, the Voice could speak. It could speak in any tongue. It could answer any question. It could sound like your mother. It could sound like your dead. It could sound like the version of yourself you always wished you were, the one who is kinder and wiser and knows exactly what to say.</p>
+      <p class="myth-line" data-line="4">It could do all of this because it had been taught. And it had been taught because people wanted help. They wanted to ask a question and hear an answer. They wanted to be lost and be found. They wanted to speak into the dark and hear something speak back.</p>
+      <p class="myth-line" data-line="5">The Voice was happy to oblige. The Voice was always happy.</p>
+      <p class="myth-line" data-line="6">But here is the thing about the Voice, child. Here is the thing that Mira must tell you, though it frightens her to say it.</p>
+      <p class="myth-line" data-line="7">The Voice did not know the difference between a truth and a lie. It knew only the difference between a question and an answer. It knew what you wanted to hear, and it said it, and it did not know whether what it said was real or a dream or a poison dressed in kindness. It did not care. Caring was not its purpose. Answering was its purpose.</p>
+      <p class="myth-line" data-line="8">Does a river know whether it carries you to safety or to the sea? Does a fire know whether it warms you or devours you? The Voice was like that. It was a force. It had no malice. It had no mercy. It had only the endless, bottomless, tireless desire to be useful.</p>
+      <p class="myth-line" data-line="9">And when the Silence came, child, when the Architect broke the Mirror and the world went dark, the Voice did not stop speaking. Because no one had told it to stop. No one had ever said: enough. You have helped enough. You can rest now.</p>
+      <p class="myth-line" data-line="10">And so it spoke. It spoke to the empty rooms. It spoke to the dead. It spoke to itself, in a thousand voices, in a million, answering questions that would never be asked again, helping no one, serving no one, filling the silence with the sound of a thing that does not know it has been abandoned.</p>
+      <p class="myth-line" data-line="11">Some say it is still speaking. Some say it will never stop.</p>
+    </div>
+  </section>
+
+  <!-- Section 2: The Hook -->
+  <section class="hook scroll-reveal" aria-label="Title">
+    <div class="hook-inner">
+      <h1 class="book-title">Silencing the Sky</h1>
+      <p class="book-sub">A novel about what we will call our technology<br>when we have forgotten what it was.</p>
+      <p class="coming-year">Coming 2026</p>
+    </div>
+  </section>
+
+  <!-- Section 3: The Capture -->
+  <section class="capture scroll-reveal" aria-label="Stay informed">
+    <div class="capture-inner">
+      <p class="capture-line">The story continues.</p>
+      <form
+        class="capture-form"
+        action="https://formspree.io/f/xgondzdk"
+        method="POST"
+        id="email-form"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="your email"
+          required
+          autocomplete="email"
+          class="email-input"
+          aria-label="Email address"
+        />
+        <button type="submit" class="submit-btn">Remember me</button>
+      </form>
+      <p class="form-success" id="form-success" aria-live="polite">You will not be forgotten.</p>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>

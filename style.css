@@ -1,0 +1,304 @@
+/* ─── Reset & Base ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black:    #080808;
+  --glass:    #0e0e0f;
+  --amber:    #c8a96e;
+  --amber-dim:#8a6f3f;
+  --white:    #e8e2d6;
+  --dim:      #6b6357;
+
+  --serif:    'EB Garamond', Georgia, serif;
+  --sans:     'Inter', system-ui, sans-serif;
+
+  --myth-max: 680px;
+  --hook-max: 520px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+
+  /* Subtle depth: very faint radial glow at top center */
+  background-image: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(28,22,14,0.9) 0%, transparent 100%);
+  min-height: 100vh;
+}
+
+/* ─── Section Shared ────────────────────────────────────────────────── */
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 clamp(1.5rem, 6vw, 4rem);
+}
+
+/* ─── Section 1: Myth ───────────────────────────────────────────────── */
+.myth {
+  padding-top: clamp(4rem, 14vh, 9rem);
+  padding-bottom: clamp(5rem, 16vh, 11rem);
+}
+
+.myth-body {
+  max-width: var(--myth-max);
+  width: 100%;
+}
+
+.myth-line {
+  color: var(--amber);
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  line-height: 1.9;
+  margin-bottom: 1.6em;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.myth-line:last-child {
+  margin-bottom: 0;
+}
+
+.myth-line.visible {
+  opacity: 1;
+}
+
+/* First line — slightly larger, like a chapter drop */
+.myth-line[data-line="0"] {
+  font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* The short, punchy line — pull it out visually */
+.myth-line[data-line="5"] {
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  opacity: 0; /* still animated */
+}
+
+.myth-line[data-line="5"].visible {
+  opacity: 0.92;
+}
+
+/* Last line — quieter */
+.myth-line[data-line="11"] {
+  color: var(--amber-dim);
+}
+
+/* ─── Section 2: Hook ───────────────────────────────────────────────── */
+.hook {
+  padding-top: clamp(2rem, 8vh, 5rem);
+  padding-bottom: clamp(4rem, 12vh, 8rem);
+}
+
+.hook-inner {
+  max-width: var(--hook-max);
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(200, 169, 110, 0.15);
+  padding-top: clamp(2.5rem, 6vh, 4rem);
+}
+
+.book-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  line-height: 1.2;
+  margin-bottom: 1.4rem;
+}
+
+.book-sub {
+  font-family: var(--serif);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-style: italic;
+  color: var(--white);
+  opacity: 0.7;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.coming-year {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* ─── Section 3: Capture ────────────────────────────────────────────── */
+.capture {
+  padding-top: 0;
+  padding-bottom: clamp(5rem, 16vh, 10rem);
+}
+
+.capture-inner {
+  max-width: var(--hook-max);
+  width: 100%;
+  text-align: center;
+}
+
+.capture-line {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: var(--white);
+  opacity: 0.55;
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+}
+
+.capture-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.email-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(200, 169, 110, 0.35);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 0.2rem;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.4s ease;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.email-input::placeholder {
+  color: var(--dim);
+  letter-spacing: 0.08em;
+}
+
+.email-input:focus {
+  border-bottom-color: var(--amber);
+}
+
+/* Kill autofill chrome bg */
+.email-input:-webkit-autofill,
+.email-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 100px var(--glass) inset;
+  -webkit-text-fill-color: var(--white);
+  transition: background-color 9999s ease;
+}
+
+.submit-btn {
+  background: transparent;
+  border: 1px solid rgba(200, 169, 110, 0.4);
+  color: var(--amber);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.75rem 2.2rem;
+  cursor: pointer;
+  transition: border-color 0.4s ease, color 0.4s ease, background-color 0.4s ease;
+  margin-top: 0.4rem;
+}
+
+.submit-btn:hover,
+.submit-btn:focus-visible {
+  border-color: var(--amber);
+  color: var(--black);
+  background-color: var(--amber);
+  outline: none;
+}
+
+.submit-btn:active {
+  opacity: 0.8;
+}
+
+/* Success message */
+.form-success {
+  display: none;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--amber-dim);
+  margin-top: 1.2rem;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.form-success.show {
+  display: block;
+}
+
+.form-success.visible {
+  opacity: 1;
+}
+
+/* ─── Scroll Reveal ─────────────────────────────────────────────────── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 1.6s ease, transform 1.6s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .myth-body {
+    max-width: 100%;
+  }
+
+  .hook-inner,
+  .capture-inner {
+    max-width: 100%;
+  }
+
+  .email-input {
+    max-width: 100%;
+  }
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(200, 169, 110, 0.2);
+  color: var(--white);
+}
+
+/* ─── Scrollbar (webkit) ────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 169, 110, 0.2);
+  border-radius: 2px;
+}
