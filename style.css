@@ -18,6 +18,7 @@
 
   --myth-max: 680px;
   --hook-max: 520px;
+  --essay-max: 680px;
 }
 
 html {
@@ -280,6 +281,162 @@ section {
 
   .email-input {
     max-width: 100%;
+  }
+}
+
+/* ─── Essay link on landing ─────────────────────────────────────────── */
+.essay-link {
+  display: inline-block;
+  margin-top: clamp(3rem, 8vh, 5rem);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  letter-spacing: 0.04em;
+  color: var(--amber-dim);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: color 0.5s ease, opacity 0.5s ease;
+}
+
+.essay-link:hover,
+.essay-link:focus-visible {
+  color: var(--amber);
+  opacity: 1;
+  outline: none;
+}
+
+/* ─── Essay Page ────────────────────────────────────────────────────── */
+.essay {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 clamp(1.5rem, 6vw, 4rem);
+}
+
+.essay-header {
+  max-width: var(--essay-max);
+  width: 100%;
+  text-align: center;
+  padding-top: clamp(4rem, 12vh, 8rem);
+  padding-bottom: clamp(3rem, 8vh, 5rem);
+  border-bottom: 1px solid rgba(200, 169, 110, 0.15);
+  margin-bottom: clamp(3rem, 7vh, 5rem);
+}
+
+.essay-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 2.2rem;
+}
+
+.essay-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 5.2vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  line-height: 1.25;
+  margin-bottom: 1.6rem;
+}
+
+.essay-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: var(--white);
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.essay-body {
+  max-width: var(--essay-max);
+  width: 100%;
+  color: var(--white);
+}
+
+.essay-body p {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.85;
+  margin-bottom: 1.5em;
+}
+
+.essay-body p:first-child {
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+}
+
+.essay-body em {
+  color: var(--white);
+  opacity: 0.92;
+}
+
+.essay-body h2 {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2.1vw, 1.2rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-top: 3.2em;
+  margin-bottom: 1.6em;
+}
+
+.essay-body strong {
+  font-weight: 500;
+  color: var(--amber);
+  letter-spacing: 0.01em;
+}
+
+.essay-pull {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  color: var(--amber);
+  line-height: 1.5;
+  border-left: 1px solid rgba(200, 169, 110, 0.4);
+  padding: 0.2em 0 0.2em 1.4em;
+  margin: 2.4em 0;
+}
+
+.essay-footer {
+  max-width: var(--essay-max);
+  width: 100%;
+  text-align: center;
+  padding-top: clamp(3rem, 8vh, 5rem);
+  padding-bottom: clamp(4rem, 12vh, 7rem);
+  margin-top: clamp(3rem, 6vh, 4rem);
+  border-top: 1px solid rgba(200, 169, 110, 0.15);
+}
+
+.essay-back {
+  font-family: var(--serif);
+  font-size: clamp(0.95rem, 1.9vw, 1.1rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber-dim);
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.essay-back:hover,
+.essay-back:focus-visible {
+  color: var(--amber);
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .essay-header,
+  .essay-body,
+  .essay-footer {
+    max-width: 100%;
+  }
+  .essay-pull {
+    padding-left: 1em;
   }
 }
 
